@@ -2,6 +2,9 @@ require 'redmine'
 
 Rails.configuration.to_prepare do
   require_dependency 'journal_hook'
+  unless Redmine::WikiFormatting::Textile::Formatter.included_modules.include? MentionedNameFormatter
+    Redmine::WikiFormatting::Textile::Formatter.send(:include, MentionedNameFormatter)
+  end
 end
 
 Redmine::Plugin.register :redmine_mention_plugin do
