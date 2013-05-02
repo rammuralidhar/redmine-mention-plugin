@@ -2,6 +2,8 @@ require 'redmine'
 
 Rails.configuration.to_prepare do
   require_dependency 'journal_hook'
+  require_dependency 'issue_hook'
+  require_dependency 'auto_completes_controller_patch'
   unless Redmine::WikiFormatting::Textile::Formatter.included_modules.include? MentionedNameFormatter
     Redmine::WikiFormatting::Textile::Formatter.send(:include, MentionedNameFormatter)
   end
