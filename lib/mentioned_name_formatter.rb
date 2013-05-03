@@ -8,7 +8,7 @@ module MentionedNameFormatter
   def inline_mentioned_name(text)
     baseurl = Redmine::Utils.relative_url_root
 
-    mentioned_users = text.scan(/\:\w+/)
+    mentioned_users = text.scan(/^\@\w+/)
     mentioned_users.each do |mentioned_user|
       username = mentioned_user[1..-1] # Remove the heading ':'
       if user = User.find_by_login(username)
