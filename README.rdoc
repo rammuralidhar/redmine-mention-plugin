@@ -1,6 +1,6 @@
 = Redmine Mention Plugin
 
-Add user to the watchers list of an issue after mentioning him/her in the note. The syntax is ":username".
+Add user to the watchers list of an issue after mentioning him/her in the note. The syntax is "@username".
 
 
 = Installation
