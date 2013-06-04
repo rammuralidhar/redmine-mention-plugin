@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     function elementFactory(element, e) {
         var template = $(customItemTemplate).find('span')
-                .text(':' + e.val).end()
+                .text('@' + e.val).end()
                 .find('small')
                 .text("(" + (e.meta || e.val) + ")").end();
         element.append(template);
@@ -19,6 +19,6 @@ $(document).ready(function() {
           values.push(user);
         });
     }).done(function() {
-        $("#issue_notes, #issue_description").sew({values: values, elementFactory: elementFactory, token: ':'});
+        $("#issue_notes, #issue_description").sew({values: values, elementFactory: elementFactory, token: '@'});
     });
 });
