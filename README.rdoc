@@ -17,3 +17,6 @@ Redmine 2.x version may be merged back upstream at some point.
 = Fork by jbekker
 
 This version adds autocompletion when mentioning a user on a issue.
+
+= Fork by diegotdai
+This version matches @username as well as @user.name
