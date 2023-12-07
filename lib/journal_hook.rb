@@ -1,7 +1,7 @@
 require_dependency 'issue'
 require_dependency 'watcher'
 
-module Mention
+
   module JournalHook
     def self.included(base)
       base.send(:before_create) do |journal|
@@ -19,6 +19,6 @@ module Mention
       end
     end
   end
-end
 
-Journal.send(:include, Mention::JournalHook) unless Journal.included_modules.include? Mention::JournalHook
+
+Journal.send(:include, JournalHook) unless Journal.included_modules.include? JournalHook

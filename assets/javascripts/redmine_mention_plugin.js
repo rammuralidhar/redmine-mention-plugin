@@ -13,8 +13,8 @@ $(document).ready(function() {
     $.getJSON('/autocomplete/mention/user', function(data) {
         $.each(data, function(user) {
           user = {
-              val: this.user.login,
-              meta: this.user.firstname + " " + this.user.lastname
+              val: this.login,
+              meta: this.firstname + " " + this.lastname
           };
           values.push(user);
         });
