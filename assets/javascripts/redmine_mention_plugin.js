@@ -19,6 +19,7 @@ $(document).ready(function() {
           values.push(user);
         });
     }).done(function() {
+    	$(window).trigger('feedLoaded', [{data: values}]);
         $("#issue_notes, #issue_description").sew({values: values, elementFactory: elementFactory, token: '@'});
     });
 });
